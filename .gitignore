@@ -88,8 +88,8 @@ phpunit
 #-------------------------
 # IDE / Development Files
 #-------------------------
-composer.json
-composer.lock
+#composer.json
+#composer.lock
 
 # Modules Testing
 _modules/*
