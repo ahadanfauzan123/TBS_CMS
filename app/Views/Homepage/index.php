@@ -32,6 +32,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<?= base_url('/menu'); ?>">Menu</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<?= base_url('/'); ?>">Dashboard</a></li>
                 </ul>
             </div>

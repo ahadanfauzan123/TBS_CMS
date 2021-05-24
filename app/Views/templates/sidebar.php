@@ -24,12 +24,13 @@
                     <li class="dropdown-item" style="width: 100%;">
                         <a href="<?= base_url('admin'); ?>">
                             <i class="fas fa-users"></i>
-                            <p>User management</p>
+                            <p>Role</p>
                         </a>
 
                     </li>
-                    <li class="dropdown-item" href="#">role management</li>
-                    <li class="dropdown-item" href="#">User Table</li>
+                    <li class="dropdown-item"><a href="<?= base_url('/accessrole'); ?>">Users</a></li>
+                    <li class="dropdown-item"><a href="<?= base_url('user/access'); ?>">Acces Role</a></li>
+                    <li class="dropdown-item" href="#">Menu</li>
                 </ul>
             </div>
 
