@@ -14,6 +14,7 @@
 
 <body>
     <h1>Access Role</h1>
+    <a href="/user/add" class="btn btn-info btn-lg my-4 mx-2">tambah</a>
 
 
     <table class="table table-dark">
@@ -29,17 +30,28 @@
             </tr>
         </thead>
         <tbody>
-            <?php for ($i = 1; $i <= 2; $i++) : ?>
+            <?php foreach ($users as $user) : ?>
                 <tr>
-                    <td>admin</td>
+                    <td><?= $user['UserName']; ?></td>
                     <td><input type="checkbox"></td>
                     <td><input type="checkbox"></td>
                     <td><input type="checkbox"></td>
                     <td><input type="checkbox"></td>
                     <td><input type="checkbox"></td>
-                    <td><button class="btn btn-success">Save!</button></td>
+                    <td class="d-flex align-items-center">
+                        <button class="btn btn-success btn-sm mx-2">Save!</button>
+                        <div class="dropdown">
+                            <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Lainnya
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item bg-warning" href="<?= site_url('/user/edit/' . $user["UserName"]); ?>">Edit</a></li>
+                                <li><a class="dropdown-item bg-danger" href="<?= site_url('/user/delete/' . $user["UserName"]); ?>">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
                 </tr>
-            <?php endfor; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 

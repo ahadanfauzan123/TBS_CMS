@@ -14,27 +14,19 @@
 
 <body>
     <div class="container">
-        <h1>FORM EDIT DATA</h1>
-        <form action="<?= site_url('/role/update/' . $menu["IdMenu"]); ?>" method="POST">
+        <h1>FORM TAMBAH DATA</h1>
+        <form action="<?= base_url('/user/save'); ?>" method="POST">
+            <input type="hidden" value="id : " name="id">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Menu Name : </label>
-                <input type="text" name="MenuName" value="<?= $menu['MenuName']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">Type Name : </label>
+                <input type="text" name="TypeName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail3" class="form-label">Masukkan Gambar : </label>
-                <input type="text" name="IconMenu" value="<?= $menu['IconMenu']; ?>" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+                <label for="exampleInputEmail2" class="form-label">Group Id : </label>
+                <input type="text" name="GroupId" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Description : </label><br>
-                <textarea name="deskripsi" name="deskripsi" id="exampleInputPassword1" cols="60" rows="10"><?= $menu['description']; ?></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail2" class="form-label">Masukkan Kembali Menu Name</label>
-                <input type="text" name="UrlMenu" value="<?= $menu['UrlMenu']; ?>" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
-            </div>
-
-            <input type="hidden" value="<?= $menu['IdMenu']; ?>" class="form-control" name="id" aria-describedby="emailHelp">
             <button type="submit" class="btn btn-primary">Tambah</button>
+            <a href="<?= base_url('user/access'); ?>" class="btn btn-warning">Kembali</a>
         </form>
     </div>
 
