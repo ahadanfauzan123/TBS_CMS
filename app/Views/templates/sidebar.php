@@ -13,34 +13,30 @@
           </div> -->
         </a>
     </div>
-    <!-- Example split danger button -->
-    <?php if (in_groups('admin')) : ?>
-        <li class="nav-item btn-rotate dropdown" style="z-index: 1000; display: flex;">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <p>Admin</p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-left" style=" background-color: white; width: 100%;" aria-labelledby="navbarDropdownMenuLink">
-                <ul style="width:100%;">
-                    <li class="dropdown-item" style="width: 100%;">
-                        <a href="<?= base_url('admin'); ?>">
+    <ul>
+        <?php if (in_groups('admin')) : ?>
+            <li>
+
+                <div class="dropdown" style="z-index: 100; position: absolute; top:80px; left:52px;">
+                    <button style="background: none; border: none; letter-spacing:2px;" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="<?= base_url('admin'); ?>">
                             <i class="fas fa-users"></i>
                             <p>Role</p>
                         </a>
+                        <a class="dropdown-item" href="<?= base_url('/accessrole'); ?>">users</a>
+                        <a class="dropdown-item" href="<?= base_url('user/access'); ?>">Access Role</a>
+                    </div>
+                </div>
 
-                    </li>
-                    <li class="dropdown-item"><a href="<?= base_url('/accessrole'); ?>">Users</a></li>
-                    <li class="dropdown-item"><a href="<?= base_url('user/access'); ?>">Acces Role</a></li>
-
-                </ul>
-            </div>
-
-        </li>
-    <?php endif; ?>
-
-
-
+            </li>
+        <?php endif; ?>
+    </ul>
     <div class="sidebar-wrapper">
         <ul class="nav">
+
 
             <hr>
             <li>
@@ -63,16 +59,26 @@
             </li>
             <li>
                 <a href="<?= base_url('logout'); ?>">
-                    <i class="nc-cloud-download-9"></i>
+                    <i class="fas fa-sign-out-alt"></i>
                     <p>Logout</p>
                 </a>
             </li>
             <li class="active-pro">
                 <a href="./upgrade.html">
-                    <i class="nc-icon nc-spaceship"></i>
+                    <!-- <i class="nc-icon nc-spaceship"></i> -->
+                    <i class="fas fa-rocket"></i>
                     <p>Upgrade to PRO</p>
                 </a>
             </li>
         </ul>
     </div>
 </div>
+<style>
+    button:hover {
+        border: none;
+    }
+
+    button:active {
+        border: none;
+    }
+</style>

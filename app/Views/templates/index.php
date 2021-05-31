@@ -31,12 +31,14 @@ Coded by www.creative-tim.com
     <link href="<?= base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?= base_url(); ?>/assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="<?= base_url(); ?>/assets/demo/demo.css" rel="stylesheet" />
+    <!-- <link href="/assets/demo/demo.css" rel="stylesheet" /> -->
+
     <script src="https://kit.fontawesome.com/953935eb4d.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="">
     <div class="wrapper ">
+
 
         <?= $this->include('templates/sidebar'); ?>
 

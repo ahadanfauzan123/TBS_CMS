@@ -14,7 +14,9 @@
 
 <body>
     <h1>Access Role</h1>
-    <a href="/user/add" class="btn btn-info btn-lg my-4 mx-2">tambah</a>
+    <a href="/user/add" class="btn btn-info btn-lg my-4 mx-2">Tambah</a>
+    <a href="<?= base_url('/'); ?>" class="btn btn-warning px-5 btn-lg">Kembali</a>
+    <hr>
 
 
     <table class="table table-dark">

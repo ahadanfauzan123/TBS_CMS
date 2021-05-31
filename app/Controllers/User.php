@@ -34,7 +34,7 @@ class User extends BaseController
     {
         // $editAccessModel = new EditAccessModel();
         $data["users"] = $this->editAccessModel->findAll();
-        d($this->editAccessModel->findAll());
+        // d($this->editAccessModel->findAll());
         return view('menu/accessRole', $data);
     }
     public function add()
