@@ -32,15 +32,16 @@
                 </div>
 
             </li>
+            <hr>
         <?php endif; ?>
     </ul>
     <div class="sidebar-wrapper">
         <ul class="nav">
 
 
-            <hr>
+
             <li>
-                <a href="<?= base_url('user'); ?>">
+                <a href="<?= base_url('user/profile'); ?>">
                     <i class="nc-icon nc-single-02"></i>
                     <p>My Profile</p>
                 </a>

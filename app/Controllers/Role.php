@@ -14,6 +14,12 @@ class Role extends BaseController
 
         return view('hometemplate/index', $data);
     }
+    // public function menutemplate()
+    // {
+    //     $mainModel = new MainModel();
+    //     $data['database'] = $mainModel->findAll();
+    //     return view('hometemplate/menu', $data);
+    // }
     public function add()
     {
 
@@ -30,13 +36,13 @@ class Role extends BaseController
             'UrlMenu' => $this->request->getVar("UrlMenu")
 
         ]);
-        return $this->response->redirect(site_url('role/index'));
+        return $this->response->redirect(site_url('/'));
     }
     public function delete($IdMenu)
     {
         $mainModel = new MainModel();
         $mainModel->delete($IdMenu);
-        return $this->response->redirect(site_url('role/index'));
+        return $this->response->redirect(site_url('/'));
     }
     public function edit($IdMenu)
     {
@@ -56,7 +62,7 @@ class Role extends BaseController
             'UrlMenu' => $this->request->getVar("UrlMenu")
 
         ]);
-        return $this->response->redirect(site_url('role/index'));
+        return $this->response->redirect(site_url('/'));
         // $mainModel->update($_POST["id"], $_POST);
         // return $this->response->redirect(site_url('role/index'));
     }

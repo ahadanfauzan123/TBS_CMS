@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Models\EditAccessModel;
 use App\Models\UsersModel;
+use App\Models\MainModel;
 
 class User extends BaseController
 
@@ -15,6 +16,13 @@ class User extends BaseController
         $this->editAccessModel = new EditAccessModel();
     }
     public function index()
+    {
+        $mainModel = new MainModel();
+        $data['menu'] = $mainModel->findAll();
+        // d($mainModel->findAll());
+        return view('hometemplate/menu', $data);
+    }
+    public function profile()
     {
 
         return view('userprofile/index');
