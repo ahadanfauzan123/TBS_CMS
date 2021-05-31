@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <title>Hello, world!</title>
 </head>
 
@@ -40,22 +40,15 @@
                     <td><?= $i++; ?></td>
                     <td><?= $user['typeName']; ?></td>
                     <td><?= $user['groupId']; ?></td>
-                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
-                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
-                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
-                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
-                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
+                    <td><input class="form-check-input mt-0" type="checkbox" value=""></td>
+                    <td><input class="form-check-input mt-0" type="checkbox" value=""></td>
+                    <td><input class="form-check-input mt-0" type="checkbox" value=""></td>
+                    <td><input class="form-check-input mt-0" type="checkbox" value=""></td>
+                    <td><input class="form-check-input mt-0" type="checkbox" value=""></td>
                     <td class="d-flex align-items-center">
-                        <button class="btn btn-success btn-sm mx-2">Save!</button>
-                        <div class="dropdown">
-                            <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Lainnya
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item bg-warning" href="<?= site_url('user/edit/' . $user["id"]); ?>">Edit</a></li>
-                                <li><a class="dropdown-item bg-danger" href="<?= site_url('user/delete/' . $user["id"]); ?>">Delete</a></li>
-                            </ul>
-                        </div>
+                        <button class="btn btn-success btn-sm mx-2"><i class="far fa-save"></i></button>
+                        <a class="btn btn-warning btn-sm px-5" href="<?= site_url('user/delete/' . $user["id"]); ?>"><i class="far fa-trash-alt"></i></a>
+
                     </td>
                 </tr>
             <?php endforeach; ?>
