@@ -20,7 +20,9 @@
     <table class="table table-dark">
         <thead>
             <tr>
+                <th scope="col">No.</th>
                 <th scope="col">type</th>
+                <th scope="col">Group Id</th>
                 <th scope="col">Add</th>
                 <th scope="col">Delete</th>
                 <th scope="col">Edit</th>
@@ -30,14 +32,17 @@
             </tr>
         </thead>
         <tbody>
+            <?php $i = 1; ?>
             <?php foreach ($users as $user) : ?>
                 <tr>
-                    <td><?= $user['UserName']; ?></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
+                    <td><?= $i++; ?></td>
+                    <td><?= $user['typeName']; ?></td>
+                    <td><?= $user['groupId']; ?></td>
+                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
+                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
+                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
+                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
+                    <td><input class="form-check-input mt-0" type="radio" value=""></td>
                     <td class="d-flex align-items-center">
                         <button class="btn btn-success btn-sm mx-2">Save!</button>
                         <div class="dropdown">
@@ -45,8 +50,8 @@
                                 Lainnya
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item bg-warning" href="<?= site_url('/user/edit/' . $user["UserName"]); ?>">Edit</a></li>
-                                <li><a class="dropdown-item bg-danger" href="<?= site_url('/user/delete/' . $user["UserName"]); ?>">Delete</a></li>
+                                <li><a class="dropdown-item bg-warning" href="<?= site_url('user/edit/' . $user["id"]); ?>">Edit</a></li>
+                                <li><a class="dropdown-item bg-danger" href="<?= site_url('user/delete/' . $user["id"]); ?>">Delete</a></li>
                             </ul>
                         </div>
                     </td>
@@ -66,5 +71,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
 </body>
+<style>
+    tr>td>input {
+        margin-left: 12px;
+    }
+</style>
 
 </html>

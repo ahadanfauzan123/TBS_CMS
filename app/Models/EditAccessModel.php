@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class EditAccessModel extends Model
 {
-    protected $table = 'tbs_cms_ugmembers';
-    // protected $primaryKey = 'UserName';
-    protected $primaryKeys = ['UserName', 'GroupID'];
-    protected $allowedFields = ['UserName', 'GroupID'];
+    protected $table = 'members';
+    protected $primaryKey = 'id';
+    // protected $primaryKeys = ['UserName', 'GroupID'];
+    protected $allowedFields = ['id', 'typeName', 'groupId'];
 }

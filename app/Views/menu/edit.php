@@ -15,15 +15,15 @@
 <body>
     <div class="container">
         <h1>FORM EDIT DATA</h1>
-        <form action="<?= base_url('/user/update/' . $user["UserName"]); ?>" method="POST">
+        <form action="<?= base_url('/user/update/' . $user["id"]); ?>" method="POST">
             <input type="hidden" value="id : " name="id">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Type Name : </label>
-                <input type="text" value="<?= $user["UserName"]; ?>" name="TypeName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" value="<?= $user["typeName"]; ?>" name="TypeName" class="form-control" id="TypeName" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail2" class="form-label">Group Id : </label>
-                <input type="text" value="<?= $user["GroupID"]; ?>" name="GroupId" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                <input type="text" value="<?= $user["groupId"]; ?>" name="GroupId" class="form-control" id="GroupId" aria-describedby="emailHelp">
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>
             <a href="<?= base_url('user/access'); ?>" class="btn btn-warning">Kembali</a>

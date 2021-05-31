@@ -9,10 +9,15 @@ use App\Models\UsersModel;
 class User extends BaseController
 
 {
+    protected $editAccesModel;
+    public function __construct()
+    {
+        $this->editAccessModel = new EditAccessModel();
+    }
     public function index()
     {
 
-        return view('user/index');
+        return view('userprofile/index');
     }
     public function accessRole()
     {
@@ -21,11 +26,15 @@ class User extends BaseController
         // d($usersModel->findAll());
         return view('menu/users', $data);
     }
+
+
+
+
     public function access()
     {
-        $editAccessModel = new EditAccessModel();
-        $data["users"] = $editAccessModel->findAll();
-        d($editAccessModel->findAll());
+        // $editAccessModel = new EditAccessModel();
+        $data["users"] = $this->editAccessModel->findAll();
+        d($this->editAccessModel->findAll());
         return view('menu/accessRole', $data);
     }
     public function add()
@@ -34,31 +43,32 @@ class User extends BaseController
     }
     public function save()
     {
-        $editAccessModel = new EditAccessModel();
-        $editAccessModel->save([
-            'UserName' => $this->request->getVar("TypeName"),
-            'GroupID' => $this->request->getVar("GroupId"),
+        // $editAccessModel = new EditAccessModel();
+        $this->editAccessModel->save([
+            'typeName' => $this->request->getVar("TypeName"),
+            'groupId' => $this->request->getVar("GroupId"),
         ]);
         return $this->response->redirect(site_url('user/access'));
     }
-    public function delete($UserName)
+    public function delete($id)
     {
-        $editAccessModel = new EditAccessModel();
-        $editAccessModel->delete($UserName);
+        // $editAccessModel = new EditAccessModel();
+        $this->editAccessModel->delete($id);
         return $this->response->redirect(site_url('user/access'));
     }
-    public function edit($UserName)
+    public function edit($id)
     {
-        $editAccessModel = new EditAccessModel();
-        $data['user'] = $editAccessModel->find($UserName);
+        // $editAccessModel = new EditAccessModel();
+        $data['user'] = $this->editAccessModel->find($id);
         return view('menu/edit', $data);
     }
-    public function update($UserName)
+    public function update($id)
     {
-        $editAccessModel = new EditAccessModel();
-        $editAccessModel->save([
-            'UserName' => $this->request->getVar("TypeName"),
-            'GroupID' => $this->request->getVar("GroupId"),
+        // $editAccessModel = new EditAccessModel();
+        $this->editAccessModel->save([
+            'id' => $id,
+            'typeName' => $this->request->getVar("TypeName"),
+            'groupId' => $this->request->getVar("GroupId"),
         ]);
         return $this->response->redirect(site_url('user/access'));
     }
