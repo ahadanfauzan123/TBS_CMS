@@ -37,7 +37,7 @@
                                 <a href="<?= site_url('role/edit/' . $m['IdMenu']); ?>" class="btn btn-info px-2"><i class="far fa-edit"></i></a>
                                 <a href="<?= site_url('role/delete/' . $m['IdMenu']); ?>" onclick="alert('yakin anda ingin menghapus menu <?= $m['MenuName']; ?>');" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
                             <?php endif; ?>
-                            <button class="btn btn-warning"><i class="far fa-eye"></i></button>
+                            <a class="btn btn-warning bg-gradient px-2" href="<?= base_url('role/view/' . $m['IdMenu']); ?>"><i class="fas fa-eye"></i></a>
                             <button class="btn btn-success"><i class="fas fa-check"></i></button>
                         </div>
                     </div>

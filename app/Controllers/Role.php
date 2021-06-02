@@ -66,8 +66,11 @@ class Role extends BaseController
         // $mainModel->update($_POST["id"], $_POST);
         // return $this->response->redirect(site_url('role/index'));
     }
-    public function view()
+    public function view($id)
     {
-        return view('hometemplate/view');
+        $mainModel = new MainModel();
+        $data['view'] = $mainModel->find($id);
+        // d($mainModel->find($id));
+        return view('hometemplate/view', $data);
     }
 }
