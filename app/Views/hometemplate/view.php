@@ -4,7 +4,7 @@
 <div class="card mx-5 my-5" style="max-width: 2000px;">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="/img/gambar3.jpeg" alt="..." width="300px">
+            <img src="/img/iconmenu_image/<?= $view["IconMenu"]; ?>" alt="..." width="300px">
         </div>
         <div class="col-md-8">
             <div class="card-body">

@@ -22,7 +22,7 @@
 
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="/img/gambar3.jpeg" alt="...">
+                        <img src="/img/iconmenu_image/<?= $m["IconMenu"]; ?>" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

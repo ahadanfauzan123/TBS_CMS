@@ -15,15 +15,18 @@
 <body>
     <div class="container">
         <h1>FORM TAMBAH DATA</h1>
-        <form action="<?= base_url('/role/save'); ?>" method="POST">
+        <form action="<?= base_url('/role/save'); ?>" method="POST" enctype="multipart/form-data">
             <input type="hidden" value="id : " name="id">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Menu Name : </label>
                 <input type="text" name="MenuName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail3" class="form-label">Masukkan Gambar : </label>
-                <input type="text" name="IconMenu" value="gambarDefault.jpg" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+            <div class="input-group mb-3">
+                <input type="file" class="form-control <?= ($validation->hasError('IconMenu')) ? 'is-invalid' : ''; ?>" id="IconMenu" name="IconMenu">
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                    <?= $validation->listErrors(); ?>
+                </div>
+                <label class="input-group-text" for="IconMenu">Upload Gambar</label>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Description : </label><br>
