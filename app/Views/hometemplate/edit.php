@@ -15,14 +15,22 @@
 <body>
     <div class="container">
         <h1>FORM EDIT DATA</h1>
-        <form action="<?= site_url('/role/update/' . $menu["IdMenu"]); ?>" method="POST">
+        <form action="<?= site_url('/role/update/' . $menu["IdMenu"]); ?>" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="gambarlama" value="<?= $menu["IconMenu"]; ?>">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Menu Name : </label>
                 <input type="text" name="MenuName" value="<?= $menu['MenuName']; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail3" class="form-label">Masukkan Gambar : </label>
-                <input type="text" name="IconMenu" value="<?= $menu['IconMenu']; ?>" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+
+            <div class="input-group mb-3">
+                <div class="col-sm-2">
+                    <img src="/img/iconmenu_image/<?= $menu["IconMenu"]; ?>" class="img-thumbnail img-preview">
+                </div>
+                <input type="file" class="form-control <?= ($validation->hasError('IconMenu')) ? 'is-invalid' : ''; ?>" id="IconMenu" name="IconMenu" onchange="previewImg()">
+                <label for="IconMenu" class="custom-file-label" style="visibility: hidden;"></label>
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                    <?= $validation->listErrors(); ?>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Description : </label><br>
@@ -47,7 +55,21 @@
 
 
 
+    <script>
+        function previewImg() {
+            const sampul = document.querySelector('#IconMenu');
+            const sampulLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview');
 
+            sampulLabel.textContent = sampul.files[0].name;
+            const fileSampul = new FileReader();
+            fileSampul.readAsDataURL(sampul.files[0]);
+
+            fileSampul.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

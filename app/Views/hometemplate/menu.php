@@ -18,10 +18,10 @@
 
     <div class='d-flex flex-column justify-content-center mt-5'>
         <?php foreach ($menu as $m) : ?>
-            <div class="card mb-3 align-self-center" style="max-width: 850px;">
+            <div class="card mb-3 align-self-center kartu">
 
-                <div class="row g-0">
-                    <div class="col-md-4">
+                <div class="row g-0 main d-flex align-items-center">
+                    <div class="col-md-4 gambar">
                         <img src="/img/iconmenu_image/<?= $m["IconMenu"]; ?>" alt="...">
                     </div>
                     <div class="col-md-8">
@@ -67,6 +67,15 @@
     button>i,
     a>i {
         color: white;
+    }
+
+    .kartu {
+        width: 750px;
+        max-height: 200px;
+    }
+
+    .kartu>.main>.gambar {
+        width: 30%;
     }
 </style>
 

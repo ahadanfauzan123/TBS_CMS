@@ -22,11 +22,15 @@
                 <input type="text" name="MenuName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="input-group mb-3">
-                <input type="file" class="form-control <?= ($validation->hasError('IconMenu')) ? 'is-invalid' : ''; ?>" id="IconMenu" name="IconMenu">
+
+                <div class="col-sm-2">
+                    <img src="/img/iconmenu_image/default.png" class="img-thumbnail img-preview">
+                </div>
+                <input type="file" class="form-control <?= ($validation->hasError('IconMenu')) ? 'is-invalid' : ''; ?>" id="IconMenu" name="IconMenu" onchange="previewImg()">
+                <label for="IconMenu" class="custom-file-label" style="visibility: hidden;"></label>
                 <div id="validationServer03Feedback" class="invalid-feedback">
                     <?= $validation->listErrors(); ?>
                 </div>
-                <label class="input-group-text" for="IconMenu">Upload Gambar</label>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Description : </label><br>
@@ -49,7 +53,21 @@
 
 
 
+    <script>
+        function previewImg() {
+            const sampul = document.querySelector('#IconMenu');
+            const sampulLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview');
 
+            sampulLabel.textContent = sampul.files[0].name;
+            const fileSampul = new FileReader();
+            fileSampul.readAsDataURL(sampul.files[0]);
+
+            fileSampul.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
