@@ -64,13 +64,7 @@
                     <p>Logout</p>
                 </a>
             </li>
-            <li class="active-pro">
-                <a href="./upgrade.html">
-                    <!-- <i class="nc-icon nc-spaceship"></i> -->
-                    <i class="fas fa-rocket"></i>
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li>
+
         </ul>
     </div>
 </div>
